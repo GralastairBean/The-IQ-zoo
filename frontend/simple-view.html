@@ -14,277 +14,437 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
+            color: white;
         }
 
-        /* Header and Navigation */
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
+        .main-container {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo h1 {
-            color: #4a5568;
-            font-size: 1.8rem;
-            font-weight: bold;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
+            min-height: 100vh;
             gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #4a5568;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: #667eea;
-        }
-
-        /* Main Content */
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
             padding: 2rem;
         }
 
-        /* Hero Section */
-        #hero {
-            text-align: center;
-            padding: 4rem 0;
-            color: white;
+        .left-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
-        .hero-content h2 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .cta-button {
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            font-size: 1.1rem;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            font-weight: bold;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Featured Animals Section */
-        #featured-animals {
-            background: white;
+        .right-section {
+            width: 350px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
             border-radius: 20px;
-            padding: 3rem;
-            margin-top: 3rem;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            height: fit-content;
+            max-height: 80vh;
+            overflow-y: auto;
         }
 
-        #featured-animals h3 {
+        .title {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: #2d3748;
         }
 
-        .animal-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            text-align: center;
+        }
+
+        .ranking-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: white;
+        }
+
+        .ranking-table {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .ranking-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            transition: transform 0.2s ease;
+        }
+
+        .ranking-row:hover {
+            transform: translateX(5px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .ranking-row.current {
+            background: rgba(255, 215, 0, 0.3);
+            border: 2px solid gold;
+        }
+
+        .rank-number {
+            font-weight: bold;
+            font-size: 1.2rem;
+            min-width: 30px;
+        }
+
+        .rank-number.gold {
+            color: #FFD700;
+        }
+
+        .rank-number.silver {
+            color: #C0C0C0;
+        }
+
+        .rank-number.bronze {
+            color: #CD7F32;
+        }
+
+        .animal-name-rank {
+            flex: 1;
+            margin-left: 1rem;
+            font-weight: 500;
+        }
+
+        .animal-score-rank {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .comparison-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             gap: 2rem;
+            flex-wrap: wrap;
         }
 
         .animal-card {
-            background: #f7fafc;
-            border-radius: 15px;
-            padding: 1.5rem;
-            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            width: 300px;
+            height: 200px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
         }
 
         .animal-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.15);
         }
 
-        .animal-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 1rem;
-        }
-
-        .animal-card h4 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: #2d3748;
-        }
-
-        .animal-card p {
-            color: #718096;
-            margin-bottom: 1rem;
-        }
-
-        .intelligence-score {
-            background: linear-gradient(45deg, #667eea, #764ba2);
+        .animal-name {
+            font-size: 2rem;
             color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            font-weight: bold;
-            display: inline-block;
-        }
-
-        /* Footer */
-        footer {
             text-align: center;
-            padding: 2rem;
+            word-wrap: break-word;
+            line-height: 1.2;
+            max-width: 100%;
+            padding: 0 1rem;
+        }
+
+        .score-display {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 1rem;
+            min-height: 2rem;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            text-align: center;
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+        }
+
+        .score-display.show {
+            opacity: 1;
+        }
+
+        .score-change {
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .score-change.positive {
+            color: #4ade80;
+        }
+
+        .score-change.negative {
+            color: #f87171;
+        }
+
+        .vs-divider {
+            font-size: 2rem;
+            font-weight: bold;
             color: white;
-            margin-top: 3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         /* Responsive Design */
-        @media (max-width: 768px) {
-            nav {
+        @media (max-width: 1200px) {
+            .main-container {
                 flex-direction: column;
                 gap: 1rem;
             }
             
-            .nav-links {
-                gap: 1rem;
+            .right-section {
+                width: 100%;
+                max-width: 600px;
+                margin: 0 auto;
             }
-            
-            .hero-content h2 {
-                font-size: 2rem;
-            }
-            
-            main {
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
                 padding: 1rem;
             }
             
-            #featured-animals {
-                padding: 2rem 1rem;
+            .comparison-container {
+                flex-direction: column;
+                gap: 1rem;
             }
             
-            .animal-grid {
-                grid-template-columns: 1fr;
+            .title {
+                font-size: 2rem;
+            }
+            
+            .animal-card {
+                width: 280px;
+                height: 180px;
+                padding: 1.5rem;
+            }
+            
+            .animal-name {
+                font-size: 1.5rem;
+            }
+            
+            .vs-divider {
+                font-size: 1.5rem;
+            }
+            
+            .ranking-title {
+                font-size: 1.3rem;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <h1>🐾 The IQ Zoo</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#animals">Animals</a></li>
-                <li><a href="#rankings">Rankings</a></li>
-                <li><a href="#about">About</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section id="hero">
-            <div class="hero-content">
-                <h2>Discover Animal Intelligence</h2>
-                <p>Rank, compare, and learn about the smartest creatures on Earth!</p>
-                <button class="cta-button" onclick="showWelcome()">Start Ranking</button>
-            </div>
-        </section>
-
-        <section id="featured-animals">
-            <h3>Featured Animals</h3>
-            <div class="animal-grid">
-                <div class="animal-card" onclick="showAnimalInfo('Dolphin', 'IQ: 95')">
-                    <img src="https://via.placeholder.com/200x150" alt="Dolphin">
-                    <h4>Dolphin</h4>
-                    <p>Highly intelligent marine mammals</p>
-                    <div class="intelligence-score">IQ: 95</div>
+    <div class="main-container">
+        <div class="left-section">
+            <h1 class="title">🐾 The IQ Zoo</h1>
+            <p class="subtitle">Which animal is smarter?</p>
+            
+            <div class="comparison-container">
+                <div class="animal-card" id="animal1" onclick="vote(1)">
+                    <h2 class="animal-name" id="name1">Loading...</h2>
+                    <div class="score-display" id="score1"></div>
                 </div>
-                <div class="animal-card" onclick="showAnimalInfo('Chimpanzee', 'IQ: 90')">
-                    <img src="https://via.placeholder.com/200x150" alt="Chimpanzee">
-                    <h4>Chimpanzee</h4>
-                    <p>Our closest genetic relatives</p>
-                    <div class="intelligence-score">IQ: 90</div>
+                
+                <div class="vs-divider">
+                    <span>VS</span>
                 </div>
-                <div class="animal-card" onclick="showAnimalInfo('Elephant', 'IQ: 85')">
-                    <img src="https://via.placeholder.com/200x150" alt="Elephant">
-                    <h4>Elephant</h4>
-                    <p>Remarkable memory and social bonds</p>
-                    <div class="intelligence-score">IQ: 85</div>
+                
+                <div class="animal-card" id="animal2" onclick="vote(2)">
+                    <h2 class="animal-name" id="name2">Loading...</h2>
+                    <div class="score-display" id="score2"></div>
                 </div>
             </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 The IQ Zoo. All rights reserved.</p>
-    </footer>
+        </div>
+        
+        <div class="right-section">
+            <h2 class="ranking-title">🏆 Live Rankings</h2>
+            <div class="ranking-table" id="rankingTable">
+                <!-- Rankings will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
 
     <script>
-        function showWelcome() {
-            alert('Welcome to The IQ Zoo! 🐾\n\nThis feature will be implemented soon!\nYou\'ll be able to start ranking animals here.');
-        }
+        // Animal data from our database
+        const animals = [
+            { id: 1, name: "Bottlenose Dolphin", IQscore: 1200 },
+            { id: 2, name: "Chimpanzee", IQscore: 1200 },
+            { id: 3, name: "African Elephant", IQscore: 1200 },
+            { id: 4, name: "Common Raven", IQscore: 1200 },
+            { id: 5, name: "Giant Pacific Octopus", IQscore: 1200 },
+            { id: 6, name: "Orangutan", IQscore: 1200 },
+            { id: 7, name: "Gorilla", IQscore: 1200 },
+            { id: 8, name: "Border Collie", IQscore: 1200 },
+            { id: 9, name: "Pig", IQscore: 1200 },
+            { id: 10, name: "Raccoon", IQscore: 1200 }
+        ];
 
-        function showAnimalInfo(animalName, intelligenceScore) {
-            alert(`${animalName} Intelligence Profile:\n\n${intelligenceScore}\n\nThis animal is known for its remarkable cognitive abilities!\n\nMore detailed information will be available soon.`);
-        }
+        let currentAnimals = [];
+        let canVote = true;
 
-        // Add smooth scrolling to navigation links
+        // Elo rating system constants
+        const K_FACTOR = 32;
+
+        // Initialize the game
         document.addEventListener('DOMContentLoaded', function() {
-            const navLinks = document.querySelectorAll('.nav-links a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetSection = document.getElementById(targetId);
-                    if (targetSection) {
-                        targetSection.scrollIntoView({ behavior: 'smooth' });
-                    }
-                });
-            });
-
-            console.log('The IQ Zoo website is loaded! 🐾');
-            console.log('Welcome to your first website!');
+            console.log('The IQ Zoo ranking system is loaded! 🐾');
+            updateRankingTable();
+            selectNewAnimals();
         });
+
+        // Update the ranking table
+        function updateRankingTable() {
+            const rankingTable = document.getElementById('rankingTable');
+            const sortedAnimals = [...animals].sort((a, b) => b.IQscore - a.IQscore);
+            
+            rankingTable.innerHTML = '';
+            
+            sortedAnimals.forEach((animal, index) => {
+                const rank = index + 1;
+                const isCurrent = currentAnimals.some(current => current.id === animal.id);
+                
+                const rankClass = rank === 1 ? 'gold' : rank === 2 ? 'silver' : rank === 3 ? 'bronze' : '';
+                const rowClass = isCurrent ? 'ranking-row current' : 'ranking-row';
+                
+                const row = document.createElement('div');
+                row.className = rowClass;
+                row.innerHTML = `
+                    <div class="rank-number ${rankClass}">${rank}</div>
+                    <div class="animal-name-rank">${animal.name}</div>
+                    <div class="animal-score-rank">${animal.IQscore}</div>
+                `;
+                
+                rankingTable.appendChild(row);
+            });
+        }
+
+        // Select two random animals for comparison
+        function selectNewAnimals() {
+            const shuffled = [...animals].sort(() => 0.5 - Math.random());
+            currentAnimals = shuffled.slice(0, 2);
+            
+            // Update the display
+            document.getElementById('name1').textContent = currentAnimals[0].name;
+            document.getElementById('name2').textContent = currentAnimals[1].name;
+            
+            // Reset score displays
+            document.getElementById('score1').innerHTML = '';
+            document.getElementById('score2').innerHTML = '';
+            document.getElementById('score1').classList.remove('show');
+            document.getElementById('score2').classList.remove('show');
+            
+            // Enable voting
+            canVote = true;
+            
+            // Update ranking table to highlight current animals
+            updateRankingTable();
+            
+            console.log(`New matchup: ${currentAnimals[0].name} vs ${currentAnimals[1].name}`);
+        }
+
+        // Handle voting
+        function vote(winnerIndex) {
+            if (!canVote) return;
+            
+            canVote = false;
+            
+            const winner = currentAnimals[winnerIndex - 1];
+            const loser = currentAnimals[2 - winnerIndex];
+            
+            // Calculate Elo rating changes
+            const winnerChange = calculateEloChange(winner.IQscore, loser.IQscore, true);
+            const loserChange = calculateEloChange(loser.IQscore, winner.IQscore, false);
+            
+            // Update scores
+            winner.IQscore += winnerChange;
+            loser.IQscore += loserChange;
+            
+            // Update the animals array
+            updateAnimalScore(winner.id, winner.IQscore);
+            updateAnimalScore(loser.id, loser.IQscore);
+            
+            // Display results
+            showResults(winnerIndex, winnerChange, loserChange);
+            
+            // Update ranking table immediately
+            updateRankingTable();
+            
+            // Start new round after 3 seconds
+            setTimeout(selectNewAnimals, 3000);
+        }
+
+        // Calculate Elo rating change
+        function calculateEloChange(playerRating, opponentRating, isWinner) {
+            const expectedScore = 1 / (1 + Math.pow(10, (opponentRating - playerRating) / 400));
+            const actualScore = isWinner ? 1 : 0;
+            return Math.round(K_FACTOR * (actualScore - expectedScore));
+        }
+
+        // Update animal score in the main array
+        function updateAnimalScore(animalId, newScore) {
+            const animal = animals.find(a => a.id === animalId);
+            if (animal) {
+                animal.IQscore = newScore;
+            }
+        }
+
+        // Display voting results
+        function showResults(winnerIndex, winnerChange, loserChange) {
+            const score1Element = document.getElementById('score1');
+            const score2Element = document.getElementById('score2');
+            
+            // Determine which animal is which
+            const animal1 = currentAnimals[0];
+            const animal2 = currentAnimals[1];
+            
+            // Show animal 1's score
+            const animal1Change = (winnerIndex === 1) ? winnerChange : loserChange;
+            score1Element.innerHTML = `
+                <div>IQ Score: ${animal1.IQscore}</div>
+                <div class="score-change ${animal1Change >= 0 ? 'positive' : 'negative'}">
+                    ${animal1Change >= 0 ? '+' : ''}${animal1Change}
+                </div>
+            `;
+            score1Element.classList.add('show');
+            
+            // Show animal 2's score
+            const animal2Change = (winnerIndex === 2) ? winnerChange : loserChange;
+            score2Element.innerHTML = `
+                <div>IQ Score: ${animal2.IQscore}</div>
+                <div class="score-change ${animal2Change >= 0 ? 'positive' : 'negative'}">
+                    ${animal2Change >= 0 ? '+' : ''}${animal2Change}
+                </div>
+            `;
+            score2Element.classList.add('show');
+            
+            console.log(`Vote recorded! Winner: +${winnerChange}, Loser: ${loserChange}`);
+        }
+
+        // Log current rankings (for debugging)
+        function logRankings() {
+            const sorted = [...animals].sort((a, b) => b.IQscore - a.IQscore);
+            console.log('Current Rankings:');
+            sorted.forEach((animal, index) => {
+                console.log(`${index + 1}. ${animal.name}: ${animal.IQscore}`);
+            });
+        }
     </script>
 </body>
 </html> 

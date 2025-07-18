@@ -7,57 +7,39 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <h1>🐾 The IQ Zoo</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#animals">Animals</a></li>
-                <li><a href="#rankings">Rankings</a></li>
-                <li><a href="#about">About</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section id="hero">
-            <div class="hero-content">
-                <h2>Discover Animal Intelligence</h2>
-                <p>Rank, compare, and learn about the smartest creatures on Earth!</p>
-                <button class="cta-button">Start Ranking</button>
-            </div>
-        </section>
-
-        <section id="featured-animals">
-            <h3>Featured Animals</h3>
-            <div class="animal-grid">
-                <div class="animal-card">
-                    <img src="https://via.placeholder.com/200x150" alt="Dolphin">
-                    <h4>Dolphin</h4>
-                    <p>Highly intelligent marine mammals</p>
-                    <div class="intelligence-score">IQ: 95</div>
+    <div class="main-container">
+        <div class="left-section">
+            <h1 class="title">🐾 The IQ Zoo</h1>
+            <p class="subtitle">Which animal is smarter?</p>
+            
+            <div class="comparison-container">
+                <div class="animal-card-wrapper">
+                    <div class="animal-card" id="animal1" onclick="vote(1)">
+                        <h2 class="animal-name" id="name1">Loading...</h2>
+                    </div>
+                    <div class="score-display" id="score1"></div>
                 </div>
-                <div class="animal-card">
-                    <img src="https://via.placeholder.com/200x150" alt="Chimpanzee">
-                    <h4>Chimpanzee</h4>
-                    <p>Our closest genetic relatives</p>
-                    <div class="intelligence-score">IQ: 90</div>
+                
+                <div class="vs-divider">
+                    <span>VS</span>
                 </div>
-                <div class="animal-card">
-                    <img src="https://via.placeholder.com/200x150" alt="Elephant">
-                    <h4>Elephant</h4>
-                    <p>Remarkable memory and social bonds</p>
-                    <div class="intelligence-score">IQ: 85</div>
+                
+                <div class="animal-card-wrapper">
+                    <div class="animal-card" id="animal2" onclick="vote(2)">
+                        <h2 class="animal-name" id="name2">Loading...</h2>
+                    </div>
+                    <div class="score-display" id="score2"></div>
                 </div>
             </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 The IQ Zoo. All rights reserved.</p>
-    </footer>
+        </div>
+        
+        <div class="right-section">
+            <h2 class="ranking-title">🏆 Live Rankings</h2>
+            <div class="ranking-table" id="rankingTable">
+                <!-- Rankings will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
