@@ -176,7 +176,7 @@ function vote(winnerIndex) {
     updateRankingTable();
     
     // Start new round after 3 seconds
-    setTimeout(selectNewAnimals, 3000);
+    setTimeout(selectNewAnimals, 1500);
 }
 
 // Calculate Elo rating change
