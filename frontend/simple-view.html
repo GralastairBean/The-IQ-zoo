@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The IQ Zoo - Animal Intelligence Rankings</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        /* Header and Navigation */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            color: #4a5568;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Hero Section */
+        #hero {
+            text-align: center;
+            padding: 4rem 0;
+            color: white;
+        }
+
+        .hero-content h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-weight: bold;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Featured Animals Section */
+        #featured-animals {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-top: 3rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        #featured-animals h3 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #2d3748;
+        }
+
+        .animal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .animal-card {
+            background: #f7fafc;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .animal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .animal-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .animal-card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #2d3748;
+        }
+
+        .animal-card p {
+            color: #718096;
+            margin-bottom: 1rem;
+        }
+
+        .intelligence-score {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: white;
+            margin-top: 3rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+            
+            main {
+                padding: 1rem;
+            }
+            
+            #featured-animals {
+                padding: 2rem 1rem;
+            }
+            
+            .animal-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>🐾 The IQ Zoo</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#animals">Animals</a></li>
+                <li><a href="#rankings">Rankings</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h2>Discover Animal Intelligence</h2>
+                <p>Rank, compare, and learn about the smartest creatures on Earth!</p>
+                <button class="cta-button" onclick="showWelcome()">Start Ranking</button>
+            </div>
+        </section>
+
+        <section id="featured-animals">
+            <h3>Featured Animals</h3>
+            <div class="animal-grid">
+                <div class="animal-card" onclick="showAnimalInfo('Dolphin', 'IQ: 95')">
+                    <img src="https://via.placeholder.com/200x150" alt="Dolphin">
+                    <h4>Dolphin</h4>
+                    <p>Highly intelligent marine mammals</p>
+                    <div class="intelligence-score">IQ: 95</div>
+                </div>
+                <div class="animal-card" onclick="showAnimalInfo('Chimpanzee', 'IQ: 90')">
+                    <img src="https://via.placeholder.com/200x150" alt="Chimpanzee">
+                    <h4>Chimpanzee</h4>
+                    <p>Our closest genetic relatives</p>
+                    <div class="intelligence-score">IQ: 90</div>
+                </div>
+                <div class="animal-card" onclick="showAnimalInfo('Elephant', 'IQ: 85')">
+                    <img src="https://via.placeholder.com/200x150" alt="Elephant">
+                    <h4>Elephant</h4>
+                    <p>Remarkable memory and social bonds</p>
+                    <div class="intelligence-score">IQ: 85</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 The IQ Zoo. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showWelcome() {
+            alert('Welcome to The IQ Zoo! 🐾\n\nThis feature will be implemented soon!\nYou\'ll be able to start ranking animals here.');
+        }
+
+        function showAnimalInfo(animalName, intelligenceScore) {
+            alert(`${animalName} Intelligence Profile:\n\n${intelligenceScore}\n\nThis animal is known for its remarkable cognitive abilities!\n\nMore detailed information will be available soon.`);
+        }
+
+        // Add smooth scrolling to navigation links
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-links a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+
+            console.log('The IQ Zoo website is loaded! 🐾');
+            console.log('Welcome to your first website!');
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,17 @@
+{
+  "name": "iq-zoo-frontend",
+  "version": "1.0.0",
+  "description": "The IQ Zoo - Animal Intelligence Rankings Website",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p 3000 -c-1",
+    "dev": "npx http-server . -p 3000 -c-1 -o",
+    "serve": "python -m http.server 3000"
+  },
+  "keywords": ["animals", "intelligence", "rankings", "zoo"],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+} 
