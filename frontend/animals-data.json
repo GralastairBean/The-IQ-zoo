@@ -1,0 +1,12 @@
+[
+    { "id": 1, "name": "Bottlenose Dolphin", "IQscore": 1200 },
+    { "id": 2, "name": "Chimpanzee", "IQscore": 1200 },
+    { "id": 3, "name": "African Elephant", "IQscore": 1200 },
+    { "id": 4, "name": "Common Raven", "IQscore": 1200 },
+    { "id": 5, "name": "Giant Pacific Octopus", "IQscore": 1200 },
+    { "id": 6, "name": "Orangutan", "IQscore": 1200 },
+    { "id": 7, "name": "Gorilla", "IQscore": 1200 },
+    { "id": 8, "name": "Border Collie", "IQscore": 1200 },
+    { "id": 9, "name": "Pig", "IQscore": 1200 },
+    { "id": 10, "name": "Raccoon", "IQscore": 1200 }
+] 

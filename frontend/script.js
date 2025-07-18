@@ -1,5 +1,13 @@
-// Animal data from our database
-const animals = [
+// Animal data - will be loaded from localStorage or default values
+let animals = [];
+let currentAnimals = [];
+let canVote = true;
+
+// Elo rating system constants
+const K_FACTOR = 32;
+
+// Default animal data
+const defaultAnimals = [
     { id: 1, name: "Bottlenose Dolphin", IQscore: 1200 },
     { id: 2, name: "Chimpanzee", IQscore: 1200 },
     { id: 3, name: "African Elephant", IQscore: 1200 },
@@ -12,15 +20,37 @@ const animals = [
     { id: 10, name: "Raccoon", IQscore: 1200 }
 ];
 
-let currentAnimals = [];
-let canVote = true;
+// Load animals data from localStorage or use defaults
+function loadAnimalsData() {
+    const savedData = localStorage.getItem('iqZooAnimals');
+    if (savedData) {
+        try {
+            animals = JSON.parse(savedData);
+            console.log('Loaded saved animal data from localStorage');
+        } catch (error) {
+            console.error('Error loading saved data, using defaults:', error);
+            animals = [...defaultAnimals];
+        }
+    } else {
+        animals = [...defaultAnimals];
+        console.log('No saved data found, using default animal data');
+    }
+}
 
-// Elo rating system constants
-const K_FACTOR = 32;
+// Save animals data to localStorage
+function saveAnimalsData() {
+    try {
+        localStorage.setItem('iqZooAnimals', JSON.stringify(animals));
+        console.log('Saved animal data to localStorage');
+    } catch (error) {
+        console.error('Error saving data:', error);
+    }
+}
 
 // Initialize the game
 document.addEventListener('DOMContentLoaded', function() {
     console.log('The IQ Zoo ranking system is loaded! 🐾');
+    loadAnimalsData();
     updateRankingTable();
     selectNewAnimals();
 });
@@ -95,6 +125,9 @@ function vote(winnerIndex) {
     // Update the animals array
     updateAnimalScore(winner.id, winner.IQscore);
     updateAnimalScore(loser.id, loser.IQscore);
+    
+    // Save the updated data
+    saveAnimalsData();
     
     // Display results
     showResults(winnerIndex, winnerChange, loserChange);
