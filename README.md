@@ -1,58 +1,58 @@
 # The IQ Zoo
 
-Welcome to The IQ Zoo project!
+Welcome to The IQ Zoo - an animal ranking website where users can rank and compare the intelligence of different animals!
 
 ## About
 
-This is a project focused on intelligence and learning. More details about the specific purpose and goals of this project will be added here.
+This is a full-stack web application that allows users to:
+- Browse and learn about different animals
+- Rank animals based on various intelligence criteria
+- Compare animal intelligence scores
+- Contribute to the animal database
+- View community rankings and statistics
 
-## Getting Started
+## Project Structure
 
-### Prerequisites
+```
+├── frontend/          # React/Vue frontend application
+├── backend/           # Node.js/Python API server
+├── shared/            # Shared types and utilities
+├── docs/              # Project documentation
+└── README.md          # This file
+```
 
-- List any prerequisites here
-- System requirements
-- Dependencies
+## Quick Start
 
-### Installation
+### Frontend
+```bash
+cd frontend
+npm install
+npm start
+```
 
-1. Clone the repository
-   ```bash
-   git clone [repository-url]
-   cd "The IQ Zoo"
-   ```
-
-2. Install dependencies (if applicable)
-   ```bash
-   # Add installation commands here
-   ```
-
-3. Run the project (if applicable)
-   ```bash
-   # Add run commands here
-   ```
-
-## Usage
-
-Describe how to use the project here.
+### Backend
+```bash
+cd backend
+npm install
+npm run dev
+```
 
 ## Features
 
-- List key features here
-- Add more as the project develops
+- Animal intelligence ranking system
+- User authentication and profiles
+- Interactive animal comparison tools
+- Community-driven animal database
+- Responsive web design
+- Real-time ranking updates
+
+## Tech Stack
+
+- **Frontend**: [Choose framework]
+- **Backend**: [Choose framework]
+- **Database**: [Choose database]
+- **Authentication**: [Choose auth solution]
 
 ## Contributing
 
-Guidelines for contributing to the project.
-
-## License
-
-Specify the license for this project.
-
-## Contact
-
-Add contact information or links here.
-
----
-
-*This README will be updated as the project develops.* 
+See the [docs](./docs/) folder for detailed development guides and contribution guidelines. 
