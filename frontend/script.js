@@ -198,32 +198,54 @@ function updateAnimalScore(animalId, newScore) {
 function showResults(winnerIndex, winnerChange, loserChange) {
     const score1Element = document.getElementById('score1');
     const score2Element = document.getElementById('score2');
-    
+    const card1 = document.getElementById('animal1');
+    const card2 = document.getElementById('animal2');
+
     // Determine which animal is which
     const animal1 = currentAnimals[0];
     const animal2 = currentAnimals[1];
-    
-    // Show animal 1's score
+
+    // Show score balloon for animal 1
     const animal1Change = (winnerIndex === 1) ? winnerChange : loserChange;
+    showScoreBalloon(card1, animal1Change);
+    // Show score balloon for animal 2
+    const animal2Change = (winnerIndex === 2) ? winnerChange : loserChange;
+    showScoreBalloon(card2, animal2Change);
+
+    // Show animal 1's new score below
     score1Element.innerHTML = `
         <div>IQ Score: ${animal1.IQscore}</div>
-        <div class="score-change ${animal1Change >= 0 ? 'positive' : 'negative'}">
-            ${animal1Change >= 0 ? '+' : ''}${animal1Change}
-        </div>
     `;
     score1Element.classList.add('show');
-    
-    // Show animal 2's score
-    const animal2Change = (winnerIndex === 2) ? winnerChange : loserChange;
+
+    // Show animal 2's new score below
     score2Element.innerHTML = `
         <div>IQ Score: ${animal2.IQscore}</div>
-        <div class="score-change ${animal2Change >= 0 ? 'positive' : 'negative'}">
-            ${animal2Change >= 0 ? '+' : ''}${animal2Change}
-        </div>
     `;
     score2Element.classList.add('show');
-    
+
     console.log(`Vote recorded! Winner: +${winnerChange}, Loser: ${loserChange}`);
+}
+
+function showScoreBalloon(cardElem, change) {
+    // Remove any existing balloon
+    let balloon = cardElem.querySelector('.score-balloon');
+    if (balloon) {
+        balloon.remove();
+    }
+    // Create new balloon
+    balloon = document.createElement('div');
+    balloon.className = 'score-balloon ' + (change >= 0 ? 'positive' : 'negative');
+    balloon.textContent = (change >= 0 ? '+' : '') + change;
+    cardElem.appendChild(balloon);
+    // Trigger pop animation
+    setTimeout(() => {
+        balloon.classList.add('pop');
+    }, 10);
+    // Remove after animation
+    setTimeout(() => {
+        balloon.remove();
+    }, 1000);
 }
 
 // Log current rankings (for debugging)
