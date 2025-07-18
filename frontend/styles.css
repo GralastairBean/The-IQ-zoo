@@ -127,9 +127,9 @@ body {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 20px;
-    padding: 2rem;
-    width: 300px;
-    height: 200px;
+    padding: 1.5rem;
+    width: 250px;
+    height: 160px;
     border: 2px solid rgba(255, 255, 255, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
@@ -154,13 +154,13 @@ body {
 }
 
 .animal-name {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: white;
     text-align: center;
     word-wrap: break-word;
     line-height: 1.2;
     max-width: 100%;
-    padding: 0 1rem;
+    padding: 0 0.5rem;
 }
 
 .score-display {
@@ -234,13 +234,13 @@ body {
     }
     
     .animal-card {
-        width: 280px;
-        height: 180px;
-        padding: 1.5rem;
+        width: 220px;
+        height: 140px;
+        padding: 1rem;
     }
     
     .animal-name {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
     
     .vs-divider {
