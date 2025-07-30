@@ -1,4 +1,4 @@
-// Animal data - will be loaded from localStorage or default values
+// Animal data - will be loaded from Flask backend API
 let animals = [];
 let currentAnimals = [];
 let canVote = true;
@@ -60,39 +60,57 @@ const defaultAnimals = [
     { id: 50, name: "Whale Shark", IQscore: 1200 }
 ];
 
-// Load animals data from localStorage or use defaults
-function loadAnimalsData() {
-    const savedData = localStorage.getItem('iqZooAnimals');
-    if (savedData) {
-        try {
-            animals = JSON.parse(savedData);
-            console.log('Loaded saved animal data from localStorage');
-        } catch (error) {
-            console.error('Error loading saved data, using defaults:', error);
-            animals = [...defaultAnimals];
+// API base URL
+const API_BASE_URL = 'http://192.168.0.15:5000';
+
+// Load animals data from Flask backend
+async function loadAnimalsData() {
+    try {
+        console.log('🔍 Attempting to connect to:', `${API_BASE_URL}/animals`);
+        const response = await fetch(`${API_BASE_URL}/animals`);
+        console.log('📡 Response status:', response.status, response.statusText);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
-    } else {
-        animals = [...defaultAnimals];
-        console.log('No saved data found, using default animal data');
+        
+        animals = await response.json();
+        console.log('✅ Loaded animals from Flask backend');
+        console.log(`📊 Loaded ${animals.length} animals`);
+    } catch (error) {
+        console.error('❌ Error loading animals from backend:', error);
+        console.error('❌ Error type:', error.constructor.name);
+        console.error('❌ Error message:', error.message);
+        throw error; // Re-throw the error instead of falling back
     }
 }
 
-// Save animals data to localStorage
+// Save animals data to Flask backend (not needed anymore, handled by backend)
 function saveAnimalsData() {
-    try {
-        localStorage.setItem('iqZooAnimals', JSON.stringify(animals));
-        console.log('Saved animal data to localStorage');
-    } catch (error) {
-        console.error('Error saving data:', error);
-    }
+    // This function is no longer needed as the backend handles saving
+    console.log('💾 Data saving is now handled by the Flask backend');
 }
 
 // Initialize the game
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('The IQ Zoo ranking system is loaded! 🐾');
-    loadAnimalsData();
-    updateRankingTable();
-    selectNewAnimals();
+document.addEventListener('DOMContentLoaded', async function() {
+    console.log('🐾 The IQ Zoo ranking system is loading...');
+    try {
+        await loadAnimalsData();
+        updateRankingTable();
+        selectNewAnimals();
+        console.log('✅ The IQ Zoo is ready!');
+    } catch (error) {
+        console.error('❌ Failed to initialize The IQ Zoo:', error);
+        document.body.innerHTML = `
+            <div style="text-align: center; padding: 50px; color: #ecf0f1;">
+                <h1>🐾 The IQ Zoo</h1>
+                <h2>❌ Connection Error</h2>
+                <p>Unable to connect to the server.</p>
+                <p>Please make sure the Flask backend is running on ${API_BASE_URL}</p>
+                <p>Error: ${error.message}</p>
+            </div>
+        `;
+    }
 });
 
 // Update the ranking table
@@ -142,11 +160,11 @@ function selectNewAnimals() {
     // Update ranking table to highlight current animals
     updateRankingTable();
     
-    console.log(`New matchup: ${currentAnimals[0].name} vs ${currentAnimals[1].name}`);
+    console.log(`🆚 New matchup: ${currentAnimals[0].name} vs ${currentAnimals[1].name}`);
 }
 
-// Handle voting
-function vote(winnerIndex) {
+// Handle voting with API call
+async function vote(winnerIndex) {
     if (!canVote) return;
     
     canVote = false;
@@ -154,39 +172,60 @@ function vote(winnerIndex) {
     const winner = currentAnimals[winnerIndex - 1];
     const loser = currentAnimals[2 - winnerIndex];
     
-    // Calculate Elo rating changes
-    const winnerChange = calculateEloChange(winner.IQscore, loser.IQscore, true);
-    const loserChange = calculateEloChange(loser.IQscore, winner.IQscore, false);
-    
-    // Update scores
-    winner.IQscore += winnerChange;
-    loser.IQscore += loserChange;
-    
-    // Update the animals array
-    updateAnimalScore(winner.id, winner.IQscore);
-    updateAnimalScore(loser.id, loser.IQscore);
-    
-    // Save the updated data
-    saveAnimalsData();
-    
-    // Display results
-    showResults(winnerIndex, winnerChange, loserChange);
-    
-    // Update ranking table immediately
-    updateRankingTable();
+    try {
+        // Send vote to Flask backend
+        console.log('📤 Sending vote to server...');
+        const response = await fetch(`${API_BASE_URL}/vote`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                winner_id: winner.id,
+                loser_id: loser.id
+            })
+        });
+        
+        console.log('📥 Response received:', response.status, response.statusText);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const result = await response.json();
+        console.log('✅ Vote result:', result);
+        
+        // Update local animals array with server response
+        animals = result.animals;
+        
+        // Display results
+        showResults(winnerIndex, result.winner_change, result.loser_change);
+        
+        // Update ranking table immediately
+        updateRankingTable();
+        
+        console.log(`✅ Vote recorded on server! Winner: +${result.winner_change}, Loser: ${result.loser_change}`);
+        
+    } catch (error) {
+        console.error('❌ Error sending vote to server:', error);
+        console.error('❌ Error details:', error.message);
+        alert('Error recording vote. Please try again.');
+        canVote = true; // Re-enable voting on error
+        return;
+    }
     
     // Start new round after 3 seconds
     setTimeout(selectNewAnimals, 1500);
 }
 
-// Calculate Elo rating change
+// Calculate Elo rating change (now handled by backend)
 function calculateEloChange(playerRating, opponentRating, isWinner) {
     const expectedScore = 1 / (1 + Math.pow(10, (opponentRating - playerRating) / 400));
     const actualScore = isWinner ? 1 : 0;
     return Math.round(K_FACTOR * (actualScore - expectedScore));
 }
 
-// Update animal score in the main array
+// Update animal score in the main array (no longer needed)
 function updateAnimalScore(animalId, newScore) {
     const animal = animals.find(a => a.id === animalId);
     if (animal) {
