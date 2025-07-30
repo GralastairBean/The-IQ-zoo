@@ -224,33 +224,24 @@ body {
 /* Score change balloon animation */
 .score-balloon {
   position: absolute;
-  top: 10px;
-  right: 18px;
+  top: 8px;
+  right: 12px;
   z-index: 2;
-  background: rgba(44, 62, 80, 0.95);
-  color: #ecf0f1;
-  font-size: 1.1rem;
-  font-weight: bold;
-  border-radius: 50px 50px 50px 50px/60px 60px 40px 40px;
-  padding: 0.5rem 1rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  font-size: 1.6rem;
+  font-weight: 900;
   opacity: 0;
   pointer-events: none;
-  transform: scale(0.7) translateY(0);
+  transform: scale(0.3);
   transition: opacity 0.2s, transform 0.2s;
   animation: none;
-  border: 1px solid rgba(236, 240, 241, 0.1);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 .score-balloon.positive {
   color: #27ae60;
-  background: rgba(39, 174, 96, 0.1);
-  border-color: rgba(39, 174, 96, 0.3);
 }
 .score-balloon.negative {
   color: #e74c3c;
-  background: rgba(231, 76, 60, 0.1);
-  border-color: rgba(231, 76, 60, 0.3);
 }
 
 .score-balloon.pop {
@@ -261,23 +252,19 @@ body {
 @keyframes balloon-pop {
   0% {
     opacity: 0;
-    transform: scale(0.7) translateY(0);
+    transform: scale(0.3);
   }
   20% {
     opacity: 1;
-    transform: scale(1.15) translateY(-10px);
+    transform: scale(1.2);
   }
-  40% {
+  60% {
     opacity: 1;
-    transform: scale(1) translateY(-18px);
-  }
-  80% {
-    opacity: 1;
-    transform: scale(1) translateY(-18px);
+    transform: scale(1);
   }
   100% {
     opacity: 0;
-    transform: scale(1) translateY(-30px);
+    transform: scale(1);
   }
 }
 
