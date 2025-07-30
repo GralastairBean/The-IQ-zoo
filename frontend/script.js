@@ -275,4 +275,34 @@ function incrementVoteCount() {
     if (voteCount % 10 === 0) {
         logRankings();
     }
-} 
+}
+
+// FAQ Modal Functions
+function openFAQ() {
+    const modal = document.getElementById('faqModal');
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+
+function closeFAQ() {
+    const modal = document.getElementById('faqModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Restore scrolling
+}
+
+// Close modal when clicking outside of it
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('faqModal');
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeFAQ();
+        }
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'block') {
+            closeFAQ();
+        }
+    });
+}); 
