@@ -212,19 +212,30 @@ function showResults(winnerIndex, winnerChange, loserChange) {
     const animal2Change = (winnerIndex === 2) ? winnerChange : loserChange;
     showScoreBalloon(card2, animal2Change);
 
-    // Show animal 1's new score below
+    // Get rank information for both animals
+    const animal1Rank = getCurrentRank(animal1.id);
+    const animal2Rank = getCurrentRank(animal2.id);
+    const totalAnimals = animals.length;
+
+    // Show animal 1's rank below
     score1Element.innerHTML = `
-        <div>IQ Score: ${animal1.IQscore}</div>
+        <div>Ranked #${animal1Rank}/${totalAnimals}</div>
     `;
     score1Element.classList.add('show');
 
-    // Show animal 2's new score below
+    // Show animal 2's rank below
     score2Element.innerHTML = `
-        <div>IQ Score: ${animal2.IQscore}</div>
+        <div>Ranked #${animal2Rank}/${totalAnimals}</div>
     `;
     score2Element.classList.add('show');
 
     console.log(`Vote recorded! Winner: +${winnerChange}, Loser: ${loserChange}`);
+}
+
+// Get current rank for an animal
+function getCurrentRank(animalId) {
+    const sortedAnimals = [...animals].sort((a, b) => b.IQscore - a.IQscore);
+    return sortedAnimals.findIndex(animal => animal.id === animalId) + 1;
 }
 
 function showScoreBalloon(cardElem, change) {
