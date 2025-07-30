@@ -7,9 +7,9 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
     min-height: 100vh;
-    color: white;
+    color: #ecf0f1;
 }
 
 .main-container {
@@ -29,35 +29,40 @@ body {
 
 .right-section {
     width: 350px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+    background: rgba(44, 62, 80, 0.8);
+    backdrop-filter: blur(15px);
     border-radius: 20px;
     padding: 2rem;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(236, 240, 241, 0.1);
     height: fit-content;
     max-height: 80vh;
     overflow-y: auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .title {
     font-size: 3rem;
     margin-bottom: 0.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     text-align: center;
+    color: #ecf0f1;
+    font-weight: 300;
 }
 
 .subtitle {
     font-size: 1.2rem;
     margin-bottom: 3rem;
-    opacity: 0.9;
+    opacity: 0.8;
     text-align: center;
+    color: #bdc3c7;
 }
 
 .ranking-title {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
     text-align: center;
-    color: white;
+    color: #ecf0f1;
+    font-weight: 400;
 }
 
 .ranking-table {
@@ -71,48 +76,54 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0.75rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(52, 73, 94, 0.6);
     border-radius: 10px;
-    transition: transform 0.2s ease;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(236, 240, 241, 0.05);
 }
 
 .ranking-row:hover {
     transform: translateX(5px);
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(52, 73, 94, 0.8);
+    border-color: rgba(236, 240, 241, 0.2);
 }
 
 .ranking-row.current {
-    background: rgba(255, 215, 0, 0.3);
-    border: 2px solid gold;
+    background: rgba(149, 165, 166, 0.3);
+    border: 2px solid #95a5a6;
+    box-shadow: 0 0 20px rgba(149, 165, 166, 0.3);
 }
 
 .rank-number {
     font-weight: bold;
     font-size: 1.2rem;
     min-width: 30px;
+    color: #ecf0f1;
 }
 
 .rank-number.gold {
-    color: #FFD700;
+    color: #f39c12;
 }
 
 .rank-number.silver {
-    color: #C0C0C0;
+    color: #bdc3c7;
 }
 
 .rank-number.bronze {
-    color: #CD7F32;
+    color: #e67e22;
 }
 
 .animal-name-rank {
     flex: 1;
     margin-left: 1rem;
     font-weight: 500;
+    color: #ecf0f1;
 }
 
 .animal-score-rank {
     font-weight: bold;
     font-size: 1.1rem;
+    color: #ecf0f1;
 }
 
 .comparison-container {
@@ -124,20 +135,21 @@ body {
 }
 
 .animal-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+    background: rgba(44, 62, 80, 0.8);
+    backdrop-filter: blur(15px);
     border-radius: 20px;
     padding: 1.5rem;
     width: 250px;
     height: 160px;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(236, 240, 241, 0.1);
+    transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     position: relative;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .animal-card-wrapper {
@@ -149,18 +161,20 @@ body {
 
 .animal-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    background: rgba(44, 62, 80, 0.9);
+    border-color: rgba(236, 240, 241, 0.2);
 }
 
 .animal-name {
     font-size: 1.5rem;
-    color: white;
+    color: #ecf0f1;
     text-align: center;
     word-wrap: break-word;
     line-height: 1.2;
     max-width: 100%;
     padding: 0 0.5rem;
+    font-weight: 400;
 }
 
 .score-display {
@@ -172,13 +186,15 @@ body {
     text-align: center;
     width: 100%;
     padding: 0.5rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(52, 73, 94, 0.6);
     border-radius: 10px;
     backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: #ecf0f1;
+    border: 1px solid rgba(236, 240, 241, 0.05);
 }
 
 .score-display.show {
@@ -191,18 +207,18 @@ body {
 }
 
 .score-change.positive {
-    color: #4ade80;
+    color: #27ae60;
 }
 
 .score-change.negative {
-    color: #f87171;
+    color: #e74c3c;
 }
 
 .vs-divider {
     font-size: 2rem;
-    font-weight: bold;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 300;
+    color: #bdc3c7;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Score change balloon animation */
@@ -211,27 +227,30 @@ body {
   top: 10px;
   right: 18px;
   z-index: 2;
-  background: rgba(255,255,255,0.95);
-  color: #222;
+  background: rgba(44, 62, 80, 0.95);
+  color: #ecf0f1;
   font-size: 1.1rem;
   font-weight: bold;
   border-radius: 50px 50px 50px 50px/60px 60px 40px 40px;
   padding: 0.5rem 1rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
   opacity: 0;
   pointer-events: none;
   transform: scale(0.7) translateY(0);
   transition: opacity 0.2s, transform 0.2s;
   animation: none;
+  border: 1px solid rgba(236, 240, 241, 0.1);
 }
 
 .score-balloon.positive {
-  color: #22c55e;
-  background: #eafff3;
+  color: #27ae60;
+  background: rgba(39, 174, 96, 0.1);
+  border-color: rgba(39, 174, 96, 0.3);
 }
 .score-balloon.negative {
-  color: #ef4444;
-  background: #ffeaea;
+  color: #e74c3c;
+  background: rgba(231, 76, 60, 0.1);
+  border-color: rgba(231, 76, 60, 0.3);
 }
 
 .score-balloon.pop {
