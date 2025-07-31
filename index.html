@@ -57,33 +57,66 @@
             </div>
             <div class="faq-body">
                 <div class="faq-item">
-                    <h3>How does the ranking system work?</h3>
-                    <p>The IQ Zoo uses an Elo rating system, similar to chess rankings. When you vote for one animal over another, their scores are adjusted based on the expected outcome. Higher-ranked animals are expected to win, so upsets create bigger score changes.</p>
+                    <h3>1. How does the ranking system work?</h3>
+                    <p>We use an Elo rating system, it's the same method chess tournaments and online games use to rank players. Every animal started with a score of 1200. When you pick which one you think is smarter, the scores shift depending on the ratio between the starting scores of the two animals. See below for the equation.</p>
                 </div>
                 
                 <div class="faq-item">
-                    <h3>What do the rankings mean?</h3>
-                    <p>Animals are ranked from #1 (smartest) to #50 (least intelligent) based on their accumulated votes. The ranking "Ranked #4/50" means the animal is currently the 4th smartest out of 50 total animals.</p>
+                    <h3>2. Do the scores correlate in some way to IQ scores?</h3>
+                    <p>Absolutely not.</p>
                 </div>
                 
                 <div class="faq-item">
-                    <h3>How are the animals selected for comparison?</h3>
-                    <p>Animals are randomly paired for each matchup. This ensures all animals get fair opportunities to compete and their rankings reflect their true relative intelligence.</p>
+                    <h3>3. What do the scores actually mean?</h3>
+                    <p>The scores mean one thing and one thing only: they show how intelligent people <em>perceive</em> the animal to be. A higher scoring animal is not objectively smarter (what would that even mean?) it simply means, on average people subjectively perceive this animal to be smarter than one with a lower score.</p>
                 </div>
                 
                 <div class="faq-item">
-                    <h3>What do the score changes mean?</h3>
-                    <p>The numbers that appear (like +15 or -4) show how many points the animal's IQ score changed after your vote. Positive numbers mean they gained points, negative means they lost points.</p>
+                    <h3>4. Isn't this all just subjective?</h3>
+                    <p>Yes, see above.</p>
                 </div>
                 
                 <div class="faq-item">
-                    <h3>Is my data saved?</h3>
-                    <p>Yes! All animal scores and rankings are automatically saved to your browser's localStorage. Your progress will be preserved even if you close and reopen the page.</p>
+                    <h3>5. Why do you have generic categories like "fish" or "camel" in some cases and specific species in other cases?</h3>
+                    <p>For animals where people aren't likely to know the specifics, we keep it simple—"fish" works just fine. But for animals like dogs, apes and whales, where species are more likely to be known, and perceived intelligence is likely to differ, we get a bit more specific. See question 6.</p>
                 </div>
                 
                 <div class="faq-item">
-                    <h3>How many animals are there?</h3>
-                    <p>There are 50 different animals in the IQ Zoo, ranging from highly intelligent creatures like dolphins and chimpanzees to simpler organisms like bacteria and amoebas.</p>
+                    <h3>6. Is this scientific at all?</h3>
+                    <p>No.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>7. Why didn't you add animal [my favourite animal here]?</h3>
+                    <p>It's nothing against your beloved [your favourite animal here], I probably just forgot. There are lots of animals out there, I'm sure I missed some important ones. Ask me to add it if you want.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>8. What is the Elo score change equation?</h3>
+                    <p>expected_score = 1 / (1 + 10^((opponent_rating - player_rating) / 400))<br>
+                    Winner: actual_score = 1<br>
+                    Loser: actual_score = 0<br>
+                    change = K_FACTOR * (actual_score - expected_score)<br>
+                    <em>Note: We use a K_FACTOR=32</em></p>
+                    
+                    <p>An example, with Ant (1200) vs Dolphin (1300)<br>
+                    expected_score = 1 / (1 + 10^((1200 - 1300) / 400)) = 0.64<br>
+                    Therefore we expect the Dolphin to win 64% of matches.</p>
+                    
+                    <p>If the Dolphin wins the score change is...<br>
+                    Dolphin = K_FACTOR * (actual_score - expected_score) = +12<br>
+                    Ant = K_FACTOR * (actual_score - expected_score) = -12</p>
+                    
+                    <p>If the Ant wins the score change is...<br>
+                    Dolphin = K_FACTOR * (actual_score - expected_score) = -20<br>
+                    Ant = K_FACTOR * (actual_score - expected_score) = +20</p>
+                    
+                    <p><em>Note: We use a K_FACTOR=32</em></p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>9. Can I contact you with issues or questions? I want to add an animal you forgot.</h3>
+                    <p>Yes, the project is here you</p>
                 </div>
             </div>
         </div>
