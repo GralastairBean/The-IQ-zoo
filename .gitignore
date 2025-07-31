@@ -132,7 +132,7 @@ dist/
 out/ 
 
 # Database files (constantly changing)
-backend/animals.json
+# backend/animals.json - Temporarily tracked for deployment
 
 # Python cache files
 __pycache__/
