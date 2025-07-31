@@ -162,4 +162,11 @@ Thumbs.db
 
 # Backup files
 backups/
-*.backup 
+*.backup
+
+# Backend files (exclude from GitHub Pages)
+app.py
+requirements.txt
+render.yaml
+backend/
+DEPLOYMENT.md 

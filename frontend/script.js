@@ -61,7 +61,7 @@ const defaultAnimals = [
 ];
 
 // API base URL
-const API_BASE_URL = 'http://localhost:5000';
+const API_BASE_URL = 'https://the-iq-zoo-backend.onrender.com';
 
 // Load animals data from Flask backend
 async function loadAnimalsData() {
