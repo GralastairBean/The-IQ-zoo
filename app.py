@@ -17,6 +17,7 @@ CORS(app, origins=[
     "http://localhost:5000", 
     "https://theiqzoo.com",
     "https://www.theiqzoo.com",
+    "https://gralastairbean.github.io",
     "https://*.vercel.app",
     "https://*.netlify.app"
 ])
