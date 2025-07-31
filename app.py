@@ -9,6 +9,11 @@ app = Flask(__name__)
 # Configure CORS for production
 CORS(app, origins=[
     "http://localhost:3000",
+    "http://localhost:3001",
+    "http://127.0.0.1:3000",
+    "http://127.0.0.1:3001",
+    "http://192.168.0.15:3000",
+    "http://192.168.0.15:3001",
     "http://localhost:5000", 
     "https://theiqzoo.com",
     "https://www.theiqzoo.com",
