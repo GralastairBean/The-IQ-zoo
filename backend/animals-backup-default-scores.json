@@ -754,5 +754,55 @@
     "id": 151,
     "name": "Meerkat",
     "IQscore": 1200
+  },
+  {
+    "id": 152,
+    "name": "Eel",
+    "IQscore": 1200
+  },
+  {
+    "id": 153,
+    "name": "Coral",
+    "IQscore": 1200
+  },
+  {
+    "id": 154,
+    "name": "Dung Beetle",
+    "IQscore": 1200
+  },
+  {
+    "id": 155,
+    "name": "Water Buffalo",
+    "IQscore": 1200
+  },
+  {
+    "id": 156,
+    "name": "Crab",
+    "IQscore": 1200
+  },
+  {
+    "id": 157,
+    "name": "Lobster",
+    "IQscore": 1200
+  },
+  {
+    "id": 158,
+    "name": "Prawn",
+    "IQscore": 1200
+  },
+  {
+    "id": 159,
+    "name": "Scorpion",
+    "IQscore": 1200
+  },
+  {
+    "id": 160,
+    "name": "Narwhal",
+    "IQscore": 1200
+  },
+  {
+    "id": 161,
+    "name": "Wallaby",
+    "IQscore": 1200
   }
 ]
