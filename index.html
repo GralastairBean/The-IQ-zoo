@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>The IQ Zoo - Animal Intelligence Rankings</title>
+    <link rel="stylesheet" href="styles.css?v=1.1">
+</head>
+<body>
+    <div class="main-container">
+        <div class="left-section">
+            <h1 class="title">📈 The IQ Zoo 📉</h1>
+            <p class="subtitle">Which animal is smarter?</p>
+            
+            <div class="comparison-container">
+                <div class="animal-card-wrapper">
+                    <div class="animal-card" id="animal1" onclick="vote(1)">
+                        <h2 class="animal-name" id="name1">Loading...</h2>
+                    </div>
+                    <div class="score-display" id="score1"></div>
+                </div>
+                
+                <div class="vs-divider">
+                    <span>VS</span>
+                </div>
+                
+                <div class="animal-card-wrapper">
+                    <div class="animal-card" id="animal2" onclick="vote(2)">
+                        <h2 class="animal-name" id="name2">Loading...</h2>
+                    </div>
+                    <div class="score-display" id="score2"></div>
+                </div>
+            </div>
+            
+            <div class="help-card" onclick="openFAQ()">
+                <h3>❓ FAQ</h3>
+            </div>
+        </div>
+        
+        <div class="right-section">
+            <h2 class="ranking-title">🏆 Live Rankings</h2>
+            <div class="ranking-table" id="rankingTable">
+                <!-- Rankings will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Modal -->
+    <div id="faqModal" class="faq-modal">
+        <div class="faq-content">
+            <div class="faq-header">
+                <h2>❓ Frequently Asked Questions</h2>
+                <button class="close-button" onclick="closeFAQ()">×</button>
+            </div>
+            <div class="faq-body">
+                <div class="faq-item">
+                    <h3>How does the ranking system work?</h3>
+                    <p>The IQ Zoo uses an Elo rating system, similar to chess rankings. When you vote for one animal over another, their scores are adjusted based on the expected outcome. Higher-ranked animals are expected to win, so upsets create bigger score changes.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What do the rankings mean?</h3>
+                    <p>Animals are ranked from #1 (smartest) to #50 (least intelligent) based on their accumulated votes. The ranking "Ranked #4/50" means the animal is currently the 4th smartest out of 50 total animals.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>How are the animals selected for comparison?</h3>
+                    <p>Animals are randomly paired for each matchup. This ensures all animals get fair opportunities to compete and their rankings reflect their true relative intelligence.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What do the score changes mean?</h3>
+                    <p>The numbers that appear (like +15 or -4) show how many points the animal's IQ score changed after your vote. Positive numbers mean they gained points, negative means they lost points.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Is my data saved?</h3>
+                    <p>Yes! All animal scores and rankings are automatically saved to your browser's localStorage. Your progress will be preserved even if you close and reopen the page.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>How many animals are there?</h3>
+                    <p>There are 50 different animals in the IQ Zoo, ranging from highly intelligent creatures like dolphins and chimpanzees to simpler organisms like bacteria and amoebas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js?v=1.1"></script>
+</body>
+</html> 
