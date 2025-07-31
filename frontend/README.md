@@ -1,2 +1,0 @@
-# The IQ Zoo - README
-
