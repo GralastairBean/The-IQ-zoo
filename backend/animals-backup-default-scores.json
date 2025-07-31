@@ -1,0 +1,758 @@
+[
+  {
+    "id": 1,
+    "name": "Dolphin",
+    "IQscore": 1200
+  },
+  {
+    "id": 2,
+    "name": "Chimpanzee",
+    "IQscore": 1200
+  },
+  {
+    "id": 3,
+    "name": "African Elephant",
+    "IQscore": 1200
+  },
+  {
+    "id": 4,
+    "name": "Raven",
+    "IQscore": 1200
+  },
+  {
+    "id": 5,
+    "name": "Seagull",
+    "IQscore": 1200
+  },
+  {
+    "id": 6,
+    "name": "Orangutan",
+    "IQscore": 1200
+  },
+  {
+    "id": 7,
+    "name": "Gorilla",
+    "IQscore": 1200
+  },
+  {
+    "id": 8,
+    "name": "Border Collie",
+    "IQscore": 1200
+  },
+  {
+    "id": 9,
+    "name": "Pig",
+    "IQscore": 1200
+  },
+  {
+    "id": 10,
+    "name": "Raccoon",
+    "IQscore": 1200
+  },
+  {
+    "id": 11,
+    "name": "Orca",
+    "IQscore": 1200
+  },
+  {
+    "id": 12,
+    "name": "Bonobo",
+    "IQscore": 1200
+  },
+  {
+    "id": 13,
+    "name": "Asian Elephant",
+    "IQscore": 1200
+  },
+  {
+    "id": 14,
+    "name": "Magpie",
+    "IQscore": 1200
+  },
+  {
+    "id": 15,
+    "name": "Octopus",
+    "IQscore": 1200
+  },
+  {
+    "id": 16,
+    "name": "Baboon",
+    "IQscore": 1200
+  },
+  {
+    "id": 17,
+    "name": "Macaque",
+    "IQscore": 1200
+  },
+  {
+    "id": 18,
+    "name": "German Shepherd",
+    "IQscore": 1200
+  },
+  {
+    "id": 19,
+    "name": "Horse",
+    "IQscore": 1200
+  },
+  {
+    "id": 20,
+    "name": "Crow",
+    "IQscore": 1200
+  },
+  {
+    "id": 21,
+    "name": "Parrot",
+    "IQscore": 1200
+  },
+  {
+    "id": 22,
+    "name": "Squirrel",
+    "IQscore": 1200
+  },
+  {
+    "id": 23,
+    "name": "Rat",
+    "IQscore": 1200
+  },
+  {
+    "id": 24,
+    "name": "Mouse",
+    "IQscore": 1200
+  },
+  {
+    "id": 25,
+    "name": "Cat",
+    "IQscore": 1200
+  },
+  {
+    "id": 26,
+    "name": "Fox",
+    "IQscore": 1200
+  },
+  {
+    "id": 27,
+    "name": "Wolf",
+    "IQscore": 1200
+  },
+  {
+    "id": 28,
+    "name": "Bear",
+    "IQscore": 1200
+  },
+  {
+    "id": 29,
+    "name": "Lion",
+    "IQscore": 1200
+  },
+  {
+    "id": 30,
+    "name": "Tiger",
+    "IQscore": 1200
+  },
+  {
+    "id": 31,
+    "name": "Shark",
+    "IQscore": 1200
+  },
+  {
+    "id": 32,
+    "name": "Turtle",
+    "IQscore": 1200
+  },
+  {
+    "id": 33,
+    "name": "Snake",
+    "IQscore": 1200
+  },
+  {
+    "id": 34,
+    "name": "Frog",
+    "IQscore": 1200
+  },
+  {
+    "id": 35,
+    "name": "Fish",
+    "IQscore": 1200
+  },
+  {
+    "id": 36,
+    "name": "Ant",
+    "IQscore": 1200
+  },
+  {
+    "id": 37,
+    "name": "Bee",
+    "IQscore": 1200
+  },
+  {
+    "id": 38,
+    "name": "Spider",
+    "IQscore": 1200
+  },
+  {
+    "id": 39,
+    "name": "Worm",
+    "IQscore": 1200
+  },
+  {
+    "id": 40,
+    "name": "Jellyfish",
+    "IQscore": 1200
+  },
+  {
+    "id": 41,
+    "name": "Sea Sponge",
+    "IQscore": 1200
+  },
+  {
+    "id": 42,
+    "name": "Sea Urchin",
+    "IQscore": 1200
+  },
+  {
+    "id": 43,
+    "name": "Starfish",
+    "IQscore": 1200
+  },
+  {
+    "id": 44,
+    "name": "Clam",
+    "IQscore": 1200
+  },
+  {
+    "id": 45,
+    "name": "Barnacle",
+    "IQscore": 1200
+  },
+  {
+    "id": 46,
+    "name": "Amoeba",
+    "IQscore": 1200
+  },
+  {
+    "id": 47,
+    "name": "Bacteria",
+    "IQscore": 1200
+  },
+  {
+    "id": 48,
+    "name": "Slime Mold",
+    "IQscore": 1200
+  },
+  {
+    "id": 49,
+    "name": "Dugong",
+    "IQscore": 1200
+  },
+  {
+    "id": 50,
+    "name": "Whale Shark",
+    "IQscore": 1200
+  },
+  {
+    "id": 51,
+    "name": "Humpback Whale",
+    "IQscore": 1200
+  },
+  {
+    "id": 52,
+    "name": "Elephant Seal",
+    "IQscore": 1200
+  },
+  {
+    "id": 53,
+    "name": "Sea Lion",
+    "IQscore": 1200
+  },
+  {
+    "id": 54,
+    "name": "Walrus",
+    "IQscore": 1200
+  },
+  {
+    "id": 55,
+    "name": "Polar Bear",
+    "IQscore": 1200
+  },
+  {
+    "id": 56,
+    "name": "Grizzly Bear",
+    "IQscore": 1200
+  },
+  {
+    "id": 57,
+    "name": "Black Bear",
+    "IQscore": 1200
+  },
+  {
+    "id": 58,
+    "name": "Panda",
+    "IQscore": 1200
+  },
+  {
+    "id": 59,
+    "name": "Koala",
+    "IQscore": 1200
+  },
+  {
+    "id": 60,
+    "name": "Kangaroo",
+    "IQscore": 1200
+  },
+  {
+    "id": 61,
+    "name": "Platypus",
+    "IQscore": 1200
+  },
+  {
+    "id": 62,
+    "name": "Echidna",
+    "IQscore": 1200
+  },
+  {
+    "id": 63,
+    "name": "Sloth",
+    "IQscore": 1200
+  },
+  {
+    "id": 64,
+    "name": "Armadillo",
+    "IQscore": 1200
+  },
+  {
+    "id": 65,
+    "name": "Anteater",
+    "IQscore": 1200
+  },
+  {
+    "id": 66,
+    "name": "Porcupine",
+    "IQscore": 1200
+  },
+  {
+    "id": 67,
+    "name": "Hedgehog",
+    "IQscore": 1200
+  },
+  {
+    "id": 68,
+    "name": "Mole",
+    "IQscore": 1200
+  },
+  {
+    "id": 69,
+    "name": "Bat",
+    "IQscore": 1200
+  },
+  {
+    "id": 70,
+    "name": "Rabbit",
+    "IQscore": 1200
+  },
+  {
+    "id": 71,
+    "name": "Hare",
+    "IQscore": 1200
+  },
+  {
+    "id": 72,
+    "name": "Deer",
+    "IQscore": 1200
+  },
+  {
+    "id": 73,
+    "name": "Moose",
+    "IQscore": 1200
+  },
+  {
+    "id": 74,
+    "name": "Elk",
+    "IQscore": 1200
+  },
+  {
+    "id": 75,
+    "name": "Antelope",
+    "IQscore": 1200
+  },
+  {
+    "id": 76,
+    "name": "Gazelle",
+    "IQscore": 1200
+  },
+  {
+    "id": 77,
+    "name": "Giraffe",
+    "IQscore": 1200
+  },
+  {
+    "id": 78,
+    "name": "Zebra",
+    "IQscore": 1200
+  },
+  {
+    "id": 79,
+    "name": "Rhinoceros",
+    "IQscore": 1200
+  },
+  {
+    "id": 80,
+    "name": "Hippopotamus",
+    "IQscore": 1200
+  },
+  {
+    "id": 81,
+    "name": "Camel",
+    "IQscore": 1200
+  },
+  {
+    "id": 82,
+    "name": "Llama",
+    "IQscore": 1200
+  },
+  {
+    "id": 83,
+    "name": "Alpaca",
+    "IQscore": 1200
+  },
+  {
+    "id": 84,
+    "name": "Goat",
+    "IQscore": 1200
+  },
+  {
+    "id": 85,
+    "name": "Sheep",
+    "IQscore": 1200
+  },
+  {
+    "id": 86,
+    "name": "Cow",
+    "IQscore": 1200
+  },
+  {
+    "id": 87,
+    "name": "Buffalo",
+    "IQscore": 1200
+  },
+  {
+    "id": 88,
+    "name": "Yak",
+    "IQscore": 1200
+  },
+  {
+    "id": 89,
+    "name": "Bison",
+    "IQscore": 1200
+  },
+  {
+    "id": 90,
+    "name": "Ox",
+    "IQscore": 1200
+  },
+  {
+    "id": 91,
+    "name": "Donkey",
+    "IQscore": 1200
+  },
+  {
+    "id": 92,
+    "name": "Mule",
+    "IQscore": 1200
+  },
+  {
+    "id": 93,
+    "name": "Dog",
+    "IQscore": 1200
+  },
+  {
+    "id": 94,
+    "name": "Beaver",
+    "IQscore": 1200
+  },
+  {
+    "id": 95,
+    "name": "Otter",
+    "IQscore": 1200
+  },
+  {
+    "id": 96,
+    "name": "Weasel",
+    "IQscore": 1200
+  },
+  {
+    "id": 97,
+    "name": "Ferret",
+    "IQscore": 1200
+  },
+  {
+    "id": 98,
+    "name": "Skunk",
+    "IQscore": 1200
+  },
+  {
+    "id": 99,
+    "name": "Badger",
+    "IQscore": 1200
+  },
+  {
+    "id": 100,
+    "name": "Hamster",
+    "IQscore": 1200
+  },
+  {
+    "id": 101,
+    "name": "Guinea Pig",
+    "IQscore": 1200
+  },
+  {
+    "id": 102,
+    "name": "Chicken",
+    "IQscore": 1200
+  },
+  {
+    "id": 103,
+    "name": "Duck",
+    "IQscore": 1200
+  },
+  {
+    "id": 104,
+    "name": "Turkey",
+    "IQscore": 1200
+  },
+  {
+    "id": 105,
+    "name": "Penguin",
+    "IQscore": 1200
+  },
+  {
+    "id": 106,
+    "name": "Eagle",
+    "IQscore": 1200
+  },
+  {
+    "id": 107,
+    "name": "Owl",
+    "IQscore": 1200
+  },
+  {
+    "id": 108,
+    "name": "Butterfly",
+    "IQscore": 1200
+  },
+  {
+    "id": 109,
+    "name": "Goldfish",
+    "IQscore": 1200
+  },
+
+  {
+    "id": 110,
+    "name": "Cockatiel",
+    "IQscore": 1200
+  },
+  {
+    "id": 111,
+    "name": "Parakeet",
+    "IQscore": 1200
+  },
+  {
+    "id": 112,
+    "name": "Peacock",
+    "IQscore": 1200
+  },
+  {
+    "id": 113,
+    "name": "Mosquito",
+    "IQscore": 1200
+  },
+  {
+    "id": 114,
+    "name": "Cockroach",
+    "IQscore": 1200
+  },
+  {
+    "id": 115,
+    "name": "Stick Insect",
+    "IQscore": 1200
+  },
+  {
+    "id": 116,
+    "name": "Moth",
+    "IQscore": 1200
+  },
+  {
+    "id": 117,
+    "name": "Crocodile",
+    "IQscore": 1200
+  },
+  {
+    "id": 118,
+    "name": "Alligator",
+    "IQscore": 1200
+  },
+  {
+    "id": 119,
+    "name": "Earthworm",
+    "IQscore": 1200
+  },
+  {
+    "id": 120,
+    "name": "Tapeworm",
+    "IQscore": 1200
+  },
+  {
+    "id": 121,
+    "name": "Ladybird",
+    "IQscore": 1200
+  },
+  {
+    "id": 122,
+    "name": "Stingray",
+    "IQscore": 1200
+  },
+  {
+    "id": 123,
+    "name": "Blue Whale",
+    "IQscore": 1200
+  },
+  {
+    "id": 124,
+    "name": "Pug",
+    "IQscore": 1200
+  },
+  {
+    "id": 125,
+    "name": "Swan",
+    "IQscore": 1200
+  },
+  {
+    "id": 126,
+    "name": "Wasp",
+    "IQscore": 1200
+  },
+  {
+    "id": 127,
+    "name": "Porpoise",
+    "IQscore": 1200
+  },
+  {
+    "id": 128,
+    "name": "Fruit Fly",
+    "IQscore": 1200
+  },
+  {
+    "id": 129,
+    "name": "Praying Mantis",
+    "IQscore": 1200
+  },
+  {
+    "id": 130,
+    "name": "Sea Cucumber",
+    "IQscore": 1200
+  },
+  {
+    "id": 131,
+    "name": "Slug",
+    "IQscore": 1200
+  },
+  {
+    "id": 132,
+    "name": "Gecko",
+    "IQscore": 1200
+  },
+  {
+    "id": 133,
+    "name": "Ostrich",
+    "IQscore": 1200
+  },
+  {
+    "id": 134,
+    "name": "Minke Whale",
+    "IQscore": 1200
+  },
+  {
+    "id": 135,
+    "name": "Chihuahua",
+    "IQscore": 1200
+  },
+  {
+    "id": 136,
+    "name": "Housefly",
+    "IQscore": 1200
+  },
+  {
+    "id": 137,
+    "name": "Hyena",
+    "IQscore": 1200
+  },
+  {
+    "id": 138,
+    "name": "Toad",
+    "IQscore": 1200
+  },
+  {
+    "id": 139,
+    "name": "Goose",
+    "IQscore": 1200
+  },
+  {
+    "id": 140,
+    "name": "Pigeon",
+    "IQscore": 1200
+  },
+  {
+    "id": 141,
+    "name": "Lemur",
+    "IQscore": 1200
+  },
+  {
+    "id": 142,
+    "name": "Cricket",
+    "IQscore": 1200
+  },
+  {
+    "id": 143,
+    "name": "Dragonfly",
+    "IQscore": 1200
+  },
+  {
+    "id": 144,
+    "name": "Iguana",
+    "IQscore": 1200
+  },
+  {
+    "id": 145,
+    "name": "Chameleon",
+    "IQscore": 1200
+  },
+  {
+    "id": 146,
+    "name": "Hawk",
+    "IQscore": 1200
+  },
+  {
+    "id": 147,
+    "name": "Wombat",
+    "IQscore": 1200
+  },
+  {
+    "id": 148,
+    "name": "Tasmanian Devil",
+    "IQscore": 1200
+  },
+  {
+    "id": 149,
+    "name": "Centipede",
+    "IQscore": 1200
+  },
+  {
+    "id": 150,
+    "name": "Vulture",
+    "IQscore": 1200
+  },
+  {
+    "id": 151,
+    "name": "Meerkat",
+    "IQscore": 1200
+  }
+]
